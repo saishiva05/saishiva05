@@ -1,0 +1,22 @@
+<section class="section is-medium has-text-centered">
+    <h2 class="title is-capitalized">Our Service</h2>
+    <p class="subtitle">At
+        <span class="has-text-weight-bold">SS Overseas</span>, we offer unlimited solutions to all your business needs,
+            providing comprehensive visa consultancy for: Business Visas, Corporate Immigration, Work Permits & Employment Visas,
+            Compliance & Documentation.
+    </p>
+    {% set cards = 
+    [
+        { title: "Business Visas", subtitle: "Helping entrepreneurs and professionals expand their global reach.",src: "/assets/services_1.jpg",alt: "" },
+        { title: "Student Visas", subtitle: "Specialized knowledge for student visas in the USA, UK, Canada, Australia, and more.",src: "/assets/services_2.jpg",alt: "" },
+        { title: "Employment Visas", subtitle: "Securing the right permits for international hires.",src: "/assets/services_3.jpg",alt: "" },
+        { title: "Post-Visa Services", subtitle: "Help with accommodation, health insurance, and travel arrangements.",src: "/assets/services_4.jpg",alt: "" }
+    ] %}
+    <div class="columns is-overflow-x-scroll">
+        {% for card in cards %}
+            <div class="column is-4">
+                {% include "../ui/card.njk" %}
+            </div>
+        {% endfor %}
+    </div>
+</section>

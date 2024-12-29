@@ -1,0 +1,35 @@
+<section class="section has-text-centered">
+    <h2 class="title is-capitalized">Countries We Offer</h2>
+    {% set countries = 
+    [
+        { name: "United States", flag: "./assets/flags/us.svg" },
+        { name: "Australia", flag: "./assets/flags/au.svg" },
+        { name: "Canada", flag: "./assets/flags/ca.svg" },
+        { name: "Italy", flag: "./assets/flags/it.svg" },
+        { name: "Europe", flag: "./assets/flags/eu.svg" },
+        { name: "United Kingdom", flag: "./assets/flags/gb.svg" },
+        { name: "Ireland", flag: "./assets/flags/ie.svg" },
+        { name: "Germany", flag: "./assets/flags/de.svg" }
+    ] %}
+    {# using flags from flag-icons npm package, https://flagicons.lipis.dev/ #}
+    <div class="fixed-grid has-4-cols-desktop has-1-cols-mobile">
+        <div class="grid">
+            {% for country in countries %}
+                <div class="cell">
+                    <div class="box has-background-primary-light is-clickable">
+                        <div class="media is-align-items-center">
+                            <div class="media-left">
+                                <figure class="image is-48x48">
+                                    <img class="is-rounded" src="{{ country.flag }}" alt="{{ country.name }}"/>
+                                </figure>
+                            </div>
+                            <div class="media-content">
+                                <p class="title is-4">{{ country.name }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
